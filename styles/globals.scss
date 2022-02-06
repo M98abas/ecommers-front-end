@@ -1,0 +1,258 @@
+*,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$main: #18ebb6;
+$lightText: #bdbdbd;
+
+.container {
+  padding-top: 20px;
+  width: 1200px;
+  margin: auto;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    padding: 20px 20px 0 20px;
+  }
+}
+
+$main: #1876d1;
+$myGray: #dadada;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: #eee;
+  height: 100vh;
+  @include center;
+  .login-form {
+    width: 300px;
+    .submit-btn {
+      width: 100%;
+    }
+  }
+}
+
+.home-container {
+  height: 100vh;
+  nav {
+    height: 70px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 10px;
+        height: 40px;
+      }
+
+      .logo {
+        font-size: 30px;
+        font-weight: bold;
+        color: $main;
+      }
+    }
+    .avatar-wrapper {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      h1 {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.home-content {
+  height: calc(100vh - 70px);
+  @include center;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  .card {
+    width: 350px;
+    height: 400px;
+    margin: 10px;
+    border: 1px solid $myGray;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    padding: 50px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    @media screen and (max-width: 500px) {
+      width: 100%;
+      height: 500px;
+    }
+
+    img {
+      width: 80%;
+      height: 50%;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-top: 50px;
+      color: #3f3d56;
+    }
+  }
+}
+.table {
+  border: 1px solid $myGray;
+  padding: 10px;
+}
+
+.header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.valueInputStyling {
+  outline: none;
+  border: 1px solid rgba(31, 24, 24, 0.411);
+  padding: 5px 10px;
+  &:active {
+    border: 1px solid rgb(165, 23, 23);
+  }
+}
+.links-container {
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+  p {
+    color: black;
+    cursor: default;
+  }
+  .sign-up-link {
+    cursor: pointer;
+    color: black;
+    &:hover {
+      color: #696868;
+    }
+  }
+}
+.login-container {
+  height: 100vh;
+  @include center;
+  .form-container {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 860px;
+    height: 700px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    .stripe {
+      box-shadow: 10px 0 10px rgba(0, 0, 0, 0.1);
+      width: 40%;
+      height: 100%;
+      background-color: $main;
+      @include center;
+      transition: 0.3s;
+      h1 {
+        color: #5294eb;
+        font-size: 40px;
+        transition: 0.3s;
+        font-weight: bold;
+      }
+
+      &:hover {
+        width: 50%;
+        h1 {
+          font-size: 50px;
+          color: white;
+        }
+      }
+    }
+    .right-side {
+      flex: 1;
+      @include center;
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+
+        input {
+          margin-bottom: 20px;
+          border: none;
+          background-color: rgb(243, 243, 243);
+          border: 2px solid rgb(243, 243, 243);
+          padding: 10px 20px;
+          border-radius: 10px;
+          outline: none;
+          transition: 0.3s;
+          &::placeholder {
+            color: $lightText;
+          }
+          &:focus {
+            border: 2px solid $main;
+          }
+        }
+
+        button {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 10px;
+          background-color: $main;
+          color: #fff;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.3s;
+          cursor: pointer;
+          &:hover {
+            filter: brightness(0.9);
+          }
+        }
+
+        .submit-btn {
+          height: 45px;
+        }
+        .forgot-link {
+          align-self: center;
+          color: $main;
+          margin-top: 10px;
+          transition: 0.3s;
+          cursor: pointer;
+          &:hover {
+            filter: brightness(0.9);
+          }
+        }
+      }
+    }
+  }
+}
