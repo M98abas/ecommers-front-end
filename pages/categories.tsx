@@ -88,9 +88,7 @@ const categories = () => {
     setLoadin(true);
     ApiCategories((data: any, error: any) => {
       setLoadin(false);
-      if (error) return message.error(error);
-      console.log(data);
-
+      if (error || !data) return message.error(error);
       setData(data);
     });
   };
