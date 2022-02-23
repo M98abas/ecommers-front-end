@@ -208,10 +208,8 @@ const categories = () => {
         myHeaders.append("Content-Type", "application/json");
 
         var raw = JSON.stringify({
-          ...values,
-          image: imageToUpload,
+          name:"Phone",image:"https://ibb.co/GCnNjT6",describtion:"None"
         });
-        console.log(raw);
         var requestOptions: any = {
           method: "POST",
           headers: myHeaders,
@@ -231,6 +229,30 @@ const categories = () => {
       })
       .catch((e) => console.log(e));
   };
+  const token: any = await Cookies.get("adminToken");
+        var myHeaders = new Headers();
+        myHeaders.append("token", token);
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          name:"Phone",image:"https://ibb.co/GCnNjT6",describtion:"None"
+        });
+        var requestOptions: any = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        fetch(`${URL}/category`, requestOptions)
+          .then((response) => response.text())
+          .then((result) => {
+            message.success("uploaded successfully");
+            setLoadin(false);
+            getData();
+            handleCancel();
+          })
+          .catch((error) => console.log("error", error));
 
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
