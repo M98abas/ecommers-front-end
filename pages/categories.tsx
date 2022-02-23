@@ -207,8 +207,7 @@ const categories = () => {
 
         var raw = JSON.stringify({
           ...values,
-                    image: imageToUpload,
-
+          image: imageToUpload,
         });
         var requestOptions: any = {
           method: "POST",
