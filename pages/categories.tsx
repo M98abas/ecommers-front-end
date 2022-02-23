@@ -216,7 +216,7 @@ const categories = () => {
           redirect: "follow",
         };
 
-        fetch(`${URL}/category`, requestOptions)
+        fetch(`${URL}/category/add`, requestOptions)
           .then((response) => response.text())
           .then((result) => {
             message.success("uploaded successfully");
