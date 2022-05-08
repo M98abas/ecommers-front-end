@@ -286,8 +286,8 @@ const categories = () => {
           </Form.Item>
           <Form.Item>
             <Button
-              loading=false
-              disabled=false
+             loading={false}
+              disabled={false}
               type="primary"
               htmlType="submit"
             >
