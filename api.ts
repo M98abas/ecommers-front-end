@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 
-export const URL = "https://ecommerce-app-work.herokuapp.com";
+export const URL = "https://ecommerse-8znkch2pa-m98abas.vercel.app";
 
 export const ApiLogin = (info: any, callback: any) => {
   var myHeaders = new Headers();
